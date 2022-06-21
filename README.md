@@ -1,2 +1,2 @@
-# log_analytics
-Script for log analytics
+# Log Analytics Report Automation
+Script for log analytics clean up before transfer to PowerBI
