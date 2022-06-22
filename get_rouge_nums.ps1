@@ -6,10 +6,10 @@ $log_data = Import-Csv .\rouge_report_sample.csv -Delimiter "`t"
 $line = "-"*10+"break"+"-"*10
 
 ### filter csv by IP address
-$select1 = $log_data | Select-Object "Last Detected IP Address"
+$filter1 = $log_data | Select-Object "Last Detected IP Address"
 
 # line break
-Write-Host "$line`n"
+Write-Host "`n$line`n"
 
 
 
@@ -17,7 +17,7 @@ Write-Host "$line`n"
 $i = 0 
 
 ### count each objects in csv
-foreach ($item in $select1) {
+foreach ($computer in $filter1) {
     $i = $i + 1
     #Write-Host $currentItemName.'Last Detected IP Address'
 }
