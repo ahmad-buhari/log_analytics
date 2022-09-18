@@ -2,7 +2,7 @@
 #Source sample file, delimit with tab 
 $log_data = Import-Csv .\rouge_report_sample.csv -Delimiter "`t"
 
-### line break variable
+### line break -- divider
 $line = "-"*10+"break"+"-"*10
 
 ### filter csv by IP address
@@ -16,17 +16,17 @@ Write-Host "`n$line`n"
 ### zerozie placeholder variable
 $i = 0 
 
-### count each objects in csv
+### variable to count each objects (computer) in csv
 foreach ($computer in $filter1) {
     $i = $i + 1
     #Write-Host $currentItemName.'Last Detected IP Address'
 }
 
-### Output count
+### Ouptut variable number for 
 Write-Host -ForegroundColor 'red' "number of rogue devices = "$i 
 
 
-### list objects
+### list  rouge computers (without antivirus software)
 $log_data | Select-Object "Last Detected IP Address","Computer Name" | Format-Table
 
 # line break
